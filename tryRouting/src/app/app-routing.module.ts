@@ -4,10 +4,30 @@ import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { LoginComponent } from './login/login.component';
+import { LayoutComponent } from './layout/layout.component';
 // import { truncate } from 'fs';
 
 
 const routes: Routes = [
+  {
+    path: '',
+    component: LayoutComponent,
+    children: [
+      {
+        path: 'home',
+        component: HomeComponent
+      },
+      {
+        path: 'about',
+        component: AboutComponent
+      }
+    ]
+  },
+  {
+    path: 'feature',
+    loadChildren: './feature/feature.module#FeatureModule'
+  },
   {
     path: 'home',
     component: HomeComponent
@@ -15,6 +35,10 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   },
   {
     path: '',
