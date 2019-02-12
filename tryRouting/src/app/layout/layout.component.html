@@ -1,0 +1,22 @@
+<p>
+  layout works!
+</p>
+<nav>
+  <ul>
+    <li>
+      <a [href]="'/home'" routerLinkActive="active">HOME</a>
+    </li>
+    <li>
+      <a [href]="'/about'" routerLinkActive="active">ABOUT</a>
+    </li>
+    <li>
+      <button routerLink="/home">登入</button>
+    </li>
+    <li>
+      <a routerLink="/login" routerLinkActive="active">
+        Logout
+      </a>
+    </li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>
