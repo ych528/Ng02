@@ -8,11 +8,14 @@ import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component';
 // import { truncate } from 'fs';
 
+import { LayoutGuard } from './layout/layout.guard';
+
 
 const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
+    canActivate: [LayoutGuard],
     children: [
       {
         path: 'home',
